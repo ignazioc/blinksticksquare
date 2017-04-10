@@ -21,9 +21,14 @@ Or install it yourself as:
     $ gem install BlikstickSquare
 
 ## Usage
+```bash
+$ blink red 			# set the whole cube to ff0000
+$ blink green			# set the whole cube to 00ff00
+$ blink blue            # set the whole cube to 0000ff
+$ blink color aa00bb    # set the whole cube to aa00bb
+$ blink off             # turn off the cube
 
-TODO: Write usage instructions here
-
+```
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.

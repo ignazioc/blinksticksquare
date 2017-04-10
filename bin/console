@@ -12,3 +12,7 @@ require "BlikstickSquare"
 
 require "irb"
 IRB.start
+
+#Example
+#cmd = ::BlikstickSquare::Commander.new()
+#cmd.red()
