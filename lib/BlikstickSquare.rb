@@ -20,9 +20,7 @@ module BlikstickSquare
     end
 
     def off
-      b = first_blinkstick()
-      b.off
-      puts b.serial + " turned off"
+      set_color("000000")
     end
 
     def red
