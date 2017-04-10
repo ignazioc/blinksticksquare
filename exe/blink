@@ -1,0 +1,56 @@
+#!/usr/bin/env ruby
+require 'BlikstickSquare'
+require 'commander/import'
+
+program :name, 'blink'
+program :version, '::BlikstickSquare::BlinkStick::version'
+program :description, 'Command line client for the Blikstick Square'
+
+command :info do |c|
+  c.summary = %q{Print info}
+  c.action do |args, options|
+    ::BlikstickSquare::Commander.new().print_info()
+  end
+end
+
+command :off do |c|
+  c.summary = %q{Turn off all the leds}
+  c.action do |args, options|
+    ::BlikstickSquare::Commander.new().off()
+  end
+end
+
+command :red do |c|
+  c.summary = %q{Set red on all the 8 leds}
+  c.action do |args, options|
+    ::BlikstickSquare::Commander.new().red()
+  end
+end
+
+command :green do |c|
+  c.summary = %q{Set blue on all the 8 leds}
+  c.action do |args, options|
+    ::BlikstickSquare::Commander.new().green()
+  end
+end
+
+command :blue do |c|
+  c.summary = %q{Set blue on all the 8 leds}
+  c.action do |args, options|
+    ::BlikstickSquare::Commander.new().blue()
+  end
+end
+
+command :color do |c|
+  c.summary = %q{Set one custom color on all the 8 leds}
+  c.syntax = 'blink color 00ff00'
+  c.action do |args, options|
+    color =  args.first
+    unless color
+      puts "No color provided"
+      return 
+    end
+    
+    ::BlikstickSquare::Commander.new().set_color(color)
+  end
+end
